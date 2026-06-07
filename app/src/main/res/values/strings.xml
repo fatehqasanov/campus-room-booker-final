@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Campus Room Booker</string>
+
+    <!-- Hints -->
+    <string name="hint_email">Email Address</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_room_name">Room Name (e.g. Lab 101)</string>
+    <string name="hint_date">Date (e.g. 2023-12-01)</string>
+    <string name="hint_time">Time (e.g. 14:00)</string>
+
+    <!-- Titles & Buttons -->
+    <string name="title_login">Login</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_book_room">Book Room</string>
+    <string name="btn_logout">Logout</string>
+
+    <!-- Links -->
+    <string name="login_link">Already have an account? Log in</string>
+    <string name="register_link">Don\'t have an account? Register</string>
+
+    <!-- Messages & Errors -->
+    <string name="msg_login_success">Login Successful!</string>
+    <string name="msg_register_success">Registration Successful!</string>
+    <string name="msg_booking_success">Room Booked Successfully!</string>
+    <string name="msg_fill_fields">Please fill in all fields</string>
+    <string name="error_email_required">Email is required</string>
+    <string name="error_password_short">Password must be at least 6 characters</string>
 </resources>
