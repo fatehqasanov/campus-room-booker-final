@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!-- Modern Minimalist Palette -->
+    <color name="primary">#2D3436</color>
+    <color name="primary_variant">#000000</color>
+    <color name="accent">#0984E3</color> <!-- Professional Blue -->
+
+    <color name="background">#FDFDFD</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F1F2F6</color>
+
+    <color name="text_main">#2D3436</color>
+    <color name="text_sub">#636E72</color>
+    <color name="error">#D63031</color>
+    <color name="success">#00B894</color>
+
+    <!-- Legacy / Compatibility -->
+    <color name="purple_200">#636E72</color>
+    <color name="purple_500">#2D3436</color>
+    <color name="purple_700">#000000</color>
+    <color name="teal_200">#0984E3</color>
+    <color name="teal_700">#0984E3</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

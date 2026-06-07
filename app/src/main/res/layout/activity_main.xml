@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="20dp"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,79 +15,123 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Welcome!"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/text_main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/roomNameEditText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/roomNameLayout"
+        style="@style/Widget.CampusRoomBooker.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/hint_room_name"
-        android:inputType="text"
-        android:minHeight="48dp"
-        android:autofillHints="none"
-        app:layout_constraintEnd_toStartOf="@+id/dateEditText"
+        app:layout_constraintEnd_toStartOf="@+id/dateLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTextView">
 
-    <EditText
-        android:id="@+id/dateEditText"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/roomNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/text_main" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateLayout"
+        style="@style/Widget.CampusRoomBooker.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/hint_date"
-        android:inputType="date"
-        android:minHeight="48dp"
-        android:autofillHints="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/roomNameEditText"
-        app:layout_constraintTop_toTopOf="@+id/roomNameEditText" />
+        app:layout_constraintStart_toEndOf="@+id/roomNameLayout"
+        app:layout_constraintTop_toTopOf="@+id/roomNameLayout">
 
-    <EditText
-        android:id="@+id/timeEditText"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:textColor="@color/text_main" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/timeLayout"
+        style="@style/Widget.CampusRoomBooker.TextInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/hint_time"
-        android:inputType="time"
-        android:minHeight="48dp"
-        android:autofillHints="none"
         app:layout_constraintEnd_toStartOf="@+id/bookButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roomNameEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/roomNameLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/timeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="time"
+            android:textColor="@color/text_main" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/bookButton"
+        style="@style/Widget.CampusRoomBooker.Button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="@string/btn_book_room"
-        app:layout_constraintBottom_toBottomOf="@+id/timeEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/timeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/timeEditText"
-        app:layout_constraintTop_toTopOf="@+id/timeEditText" />
+        app:layout_constraintStart_toEndOf="@+id/timeLayout"
+        app:layout_constraintTop_toTopOf="@+id/timeLayout" />
+
+    <ProgressBar
+        android:id="@+id/bookingProgressBar"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:visibility="gone"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/bookButton"
+        app:layout_constraintEnd_toEndOf="@+id/bookButton"
+        app:layout_constraintStart_toStartOf="@+id/bookButton"
+        app:layout_constraintTop_toTopOf="@+id/bookButton" />
+
+    <TextView
+        android:id="@+id/roomAvailabilityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Room Status: Unknown"
+        android:textSize="13sp"
+        android:textColor="@color/accent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLayout" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/timeEditText" />
+        android:layout_marginTop="20dp"
+        android:background="@color/surface_variant"
+        app:layout_constraintTop_toBottomOf="@+id/roomAvailabilityText" />
 
     <TextView
         android:id="@+id/listTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="Current Bookings"
         android:textSize="16sp"
+        android:textColor="@color/text_main"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -107,6 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_logout"
+        android:textColor="@color/text_sub"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
