@@ -10,7 +10,10 @@
 
     <!-- Titles & Buttons -->
     <string name="title_login">Login</string>
-    <string name="btn_login">Login</string>
+    <string name="title_register">Create Account</string>
+    <string name="subtitle_login">Sign in to continue</string>
+    <string name="subtitle_register">Create an account to start booking</string>
+    <string name="btn_login">Sign In</string>
     <string name="btn_register">Register</string>
     <string name="btn_book_room">Book Room</string>
     <string name="btn_logout">Logout</string>
